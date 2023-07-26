@@ -25,30 +25,38 @@ class _NotePageState extends State<NotePage> {
         backgroundColor: Colors.black,
         body: Padding(
           padding: const EdgeInsets.all(15.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return const HomePage();
-                      },
-                    ));
-                  },
-                  child: const Text(
-                    '< Folders',
-                    style: TextStyle(color: iconColor),
-                  )),
-              const SearchPage(
-                name: "Notes",
-              ),
-              const SizedBox(height: 15),
-              Column(
-                  children: noteList.map((e) {
-                return NotesAddedPage(noteListName: e);
-              }).toList())
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const HomePage();
+                        },
+                      ));
+                    },
+                    child: const Text(
+                      '< Folders',
+                      style: TextStyle(color: iconColor),
+                    )),
+                const SearchPage(
+                  name: "Notes",
+                ),
+                const SizedBox(height: 15),
+                Text(
+                  'Folder Name : ${widget.folderName}',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 15),
+                Column(
+                    children: noteList.map((e) {
+                  return NotesAddedPage(noteListName: e);
+                }).toList()),
+              ],
+            ),
           ),
         ),
         floatingActionButton: FloatingActionButton(

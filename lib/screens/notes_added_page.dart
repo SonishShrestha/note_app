@@ -16,12 +16,13 @@ class _NotesAddedPageState extends State<NotesAddedPage> {
 
   @override
   Widget build(BuildContext context) {
+    final date = DateTime.now();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text(DateTime.now().toString(),
+          child: Text('${date.year}:${date.month}:${date.day}',
               style: const TextStyle(
                   color: primaryColor,
                   fontWeight: FontWeight.w900,
