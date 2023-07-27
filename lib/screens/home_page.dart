@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iphone_notes_app/screens/folderpage.dart';
-import 'package:iphone_notes_app/screens/searchpage.dart';
+import 'package:iphone_notes_app/screens/folder_add_page.dart';
+import 'package:iphone_notes_app/modules/search_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SearchPage(
+                SearchPage(
                   name: "Folders",
                 ),
                 const Text("iCloud",

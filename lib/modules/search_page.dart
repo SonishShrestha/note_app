@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 class SearchPage extends StatelessWidget {
   final String name;
 
-  const SearchPage({super.key, required this.name});
+  SearchPage({super.key, required this.name});
   static const primaryColor = Color.fromRGBO(255, 255, 255, 1);
   static const boxColor = Color.fromARGB(255, 56, 55, 55);
   static const iconColor = Color.fromARGB(255, 216, 173, 14);
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,9 @@ class SearchPage extends StatelessWidget {
             color: boxColor,
             borderRadius: BorderRadius.circular(10),
           ),
-          child: const TextField(
-            decoration: InputDecoration(
+          child: TextField(
+            controller: searchController,
+            decoration: const InputDecoration(
               fillColor: boxColor,
               hintText: 'Search',
               hintStyle: TextStyle(color: Colors.grey),

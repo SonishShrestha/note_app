@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:iphone_notes_app/screens/notespage.dart';
+import 'package:iphone_notes_app/screens/notes_page.dart';
 
 class FolderPage extends StatefulWidget {
   final String? folderName;
   // int? totalNotes;
   const FolderPage({super.key, required this.folderName});
-  static const primaryColor = Color.fromRGBO(255, 255, 255, 1);
-  static const boxColor = Color.fromARGB(255, 56, 55, 55);
-  static const iconColor = Color.fromARGB(255, 216, 173, 14);
 
   @override
   State<FolderPage> createState() => _FolderPageState();
 }
+
+const primaryColor = Color.fromRGBO(255, 255, 255, 1);
+const boxColor = Color.fromARGB(255, 56, 55, 55);
+const iconColor = Color.fromARGB(255, 216, 173, 14);
 
 class _FolderPageState extends State<FolderPage> {
   @override
@@ -29,7 +30,7 @@ class _FolderPageState extends State<FolderPage> {
         });
       },
       child: Card(
-        color: FolderPage.boxColor,
+        color: boxColor,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
@@ -39,16 +40,16 @@ class _FolderPageState extends State<FolderPage> {
                 children: [
                   const Icon(
                     Icons.folder_open,
-                    color: FolderPage.iconColor,
+                    color: iconColor,
                   ),
                   const SizedBox(width: 10),
                   Text(
                     "${widget.folderName}",
-                    style: const TextStyle(color: FolderPage.primaryColor),
+                    style: const TextStyle(color: primaryColor),
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   // Text("$totalNotes",
                   //     style: const TextStyle(color: primaryColor)),
